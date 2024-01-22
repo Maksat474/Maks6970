@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Persons_list</title>
+</head>
+<body>
+<h1>Персонажи теккена</h1>
+<ul>
+    {% for i in persons %}
+  <li>
+    <img src="{{i.image}}" alt="">
+    <h2>{{i.name}}</h2>
+    <p>{{i.sport}}</p>
+    <a href="/persons_list/{{i.id}}">Подробнее</a>
+  </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

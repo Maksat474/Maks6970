@@ -7,3 +7,7 @@ class Books(models.Model):
     image = models.ImageField(upload_to='')
     price = models.CharField(max_length=100, verbose_name='Цена ')
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Книгу'
+        verbose_name_plural = 'Книги'
