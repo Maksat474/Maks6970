@@ -11,6 +11,6 @@ class TvshowForm(forms.ModelForm):
 class ReviewsForm(forms.ModelForm):
     class Meta:
         model = models.Reviews
-        fields =  '__all__'
+        fields = '__all__'
 
 

@@ -46,11 +46,12 @@ def edit_tvshow_view(request, id):
         if form.is_valid():
             form.save()
             return HttpResponse('Успешно изменен <a href="/">На главную</a> ')
+
     else:
-        form = forms.TvshowForm
+        form = forms.TvshowForm(instance=tvshow_id)
         return render(request, template_name='tv_show/crud/edit_tvshow.html',
-                      context={'form': form,
-                               'tv_show_id': tvshow_id})
+                  context={'form': form,
+                           'tv_show_id': tvshow_id})
 
 
 #Добавление комментариев

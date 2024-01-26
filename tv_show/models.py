@@ -33,15 +33,15 @@ class TVShow(models.Model):
 
 class Reviews(models.Model):
     STAR = [
-        ('1', 'один'),
-        ('2', 'два'),
-        ('3', 'три'),
-        ('4', 'четыре'),
-        ('5', 'пять'),
+        ('один', 'один'),
+        ('два', 'два'),
+        ('три', 'три'),
+        ('четыре', 'четыре'),
+        ('пять', 'пять'),
     ]
 
     text = models.TextField()
-    stars = models.IntegerField(choices=STAR)
+    stars = models.TextField(choices=STAR)
     tv_show = models.ForeignKey(TVShow, on_delete=models.CASCADE, related_name='tvshow_reviews')
 
     def __str__(self):
