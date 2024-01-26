@@ -21,3 +21,28 @@ class TVShow(models.Model):
     class Meta:
         verbose_name = 'ТВ шоу'
         verbose_name_plural = 'ТВ шоу'
+
+
+# class Review(models.Model):
+#     tv_show = models.ForeignKey(TVShow, on_delete=models.CASCADE, related_name='tvshow_reviews')
+#     text = models.TextField()
+#
+#     def __str__(self):
+#         return self.text
+
+
+class Reviews(models.Model):
+    STAR = [
+        ('1', 'один'),
+        ('2', 'два'),
+        ('3', 'три'),
+        ('4', 'четыре'),
+        ('5', 'пять'),
+    ]
+
+    text = models.TextField()
+    stars = models.IntegerField(choices=STAR)
+    tv_show = models.ForeignKey(TVShow, on_delete=models.CASCADE, related_name='tvshow_reviews')
+
+    def __str__(self):
+        return self.text

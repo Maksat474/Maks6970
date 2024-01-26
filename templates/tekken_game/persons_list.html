@@ -7,14 +7,20 @@
 <body>
 <h1>Персонажи теккена</h1>
 <ul>
+    <hr>
+    <button><a href="/create_person/">Добавить персонажа</a></button>
+    <hr>
     {% for i in persons %}
   <li>
     <img src="{{i.image}}" alt="">
     <h2>{{i.name}}</h2>
     <p>{{i.sport}}</p>
     <a href="/persons_list/{{i.id}}">Подробнее</a>
+      <br>
+      --------------------------------------------------------------------------
   </li>
     {% endfor %}
+
 </ul>
 </body>
 </html>

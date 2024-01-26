@@ -26,3 +26,11 @@ class PersonGame(models.Model):
     class Meta:
         verbose_name = 'Персонажа'
         verbose_name_plural = 'Персонажи'
+
+
+class Review(models.Model):
+    tekken_person = models.ForeignKey(PersonGame, on_delete=models.CASCADE, related_name='tekken_review')
+    text = models.TextField()
+
+    def __str__(self):
+        return self.text
