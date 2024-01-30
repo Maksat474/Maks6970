@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>TVShow_list</title>
-</head>
-<body>
-<h1>ТВ шоу</h1>
-<ul>
-  <hr>
-    <button><a href="/create_tvshow/">Добавить тв шоу</a></button>
-    <button><a href="/create_review/">Добавить комментарий</a></button>
-  <hr>
-  {% for i in tv_show %}
-  <li>
-    <img src="{{i.image}}" alt="" width="400" height="500">
-    <h2>{{i.name}}</h2>
-    <a href="/tvshow_list/{{i.id}}">Подробнее</a>
-    <hr>
-  </li>
-  {% endfor %}
-
-</ul>
-</body>
-</html>
+{% load static %}
+{% include 'tv_show/header.html' %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<div class="horizont-container">
+  <div class="horizont">
+    {% for i in tv_show %}
+      <div class="card" style="width: 18rem;">
+        <img src="{{i.image}}" class="card-img-top" alt="..." style="height: 450px; object-fit: cover">
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <a href="/tvshow_list/{{i.id}}" class="btn btn-primary">Подробнее</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% include 'tv_show/footer.html' %}
