@@ -9,6 +9,7 @@
         <h3>Создание тв шоу</h3>
         {% csrf_token %}
         {{form.as_p}}
+        <input type="submit" value="Отправить">
     </div>
 </form>
 {% include 'tv_show/footer.html' %}

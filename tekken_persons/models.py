@@ -28,7 +28,7 @@ class PersonGame(models.Model):
         verbose_name_plural = 'Персонажи'
 
 
-class Review(models.Model):
+class Reviews(models.Model):
     tekken_person = models.ForeignKey(PersonGame, on_delete=models.CASCADE, related_name='tekken_review')
     text = models.TextField()
 

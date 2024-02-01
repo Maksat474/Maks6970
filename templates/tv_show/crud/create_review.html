@@ -1,8 +1,8 @@
 
 {% load static %}
 {% include 'tv_show/header.html' %}
-<link rel="stylesheet" href="{% static 'css/create_form.css'%}">
-<form class="decor" action="/create_tvshow/" method="post" enctype="multipart/form-data">
+<link rel="stylesheet" href="{% static 'css/create_form.css' %}">
+<form class="decor" method="post" enctype="multipart/form-data">
     <div class="form-left-decoration"></div>
     <div class="form-right-decoration"></div>
     <div class="circle"></div>
@@ -10,7 +10,9 @@
         <h3>Добавить комментарий</h3>
         {% csrf_token %}
         {{form.as_p}}
+         <input type="submit" value="Отправить">
     </div>
 </form>
+
 <br><br><br><br><br><br><br><br>
 {% include 'tv_show/footer.html' %}
