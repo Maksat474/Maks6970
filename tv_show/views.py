@@ -10,7 +10,10 @@ class TVShowListView(generic.ListView):
     context_object_name = 'tv_show'
 
     def get_queryset(self):
-        return self.model.objects.all()
+        tv_shows = self.model.objects.all()
+        for tv_show in tv_shows:
+            tv_show.review_count = tv_show.tvshow_reviews.count()
+        return tv_shows
 # def tvshow_list(request):
 #     if request.method == 'GET':
 #         tvshow = models.TVShow.objects.all()
@@ -119,9 +122,6 @@ class EditTVShoeView(generic.UpdateView):
 #         return render(request, template_name='tv_show/crud/edit_tvshow.html',
 #                   context={'form': form,
 #                            'tv_show_id': tvshow_id})
-
-
-
 
 
 # поиск
