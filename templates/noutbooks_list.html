@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+{% for i in object_list %}
+<h3>Наименование{{i.title}}</h3>
+<img src="{{i.image}}" alt="" width="200" height="300">
+<p>Цена: {{i.price}}</p>
+<hr>
+{% endfor %}
+
+</body>
+</html>
