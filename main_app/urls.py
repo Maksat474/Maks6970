@@ -9,6 +9,7 @@ urlpatterns = [
     path('', include('tekken_persons.urls')),
     path('', include('tv_show.urls')),
     path('', include('parsing.urls')),
+    path('', include('custom_user.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

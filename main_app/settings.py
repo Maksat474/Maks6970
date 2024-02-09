@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'tekken_persons',
     'tv_show',
     'parsing',
+    'custom_user',
 ]
 
 MIDDLEWARE = [
