@@ -14,7 +14,7 @@ class CustomUserCreationForm(UserCreationForm):
     phone_number = forms.CharField(required=True, initial='+996',
                                    widget=forms.TextInput(attrs={'placeholder': 'Введите номер телефона: '}))
     date_of_birth = forms.DateField(required=True, widget=forms.DateInput(attrs={'type': 'date'}))
-    gender = forms.ChoiceField(choices='GENDER_CHOICES')
+    gender = forms.ChoiceField(choices=GENDER_CHOICES)
     address = forms.CharField(required=True,
                               widget=forms.TextInput(attrs={'placeholder': 'Введите адрес: '}))
     hobby = forms.CharField(required=True,

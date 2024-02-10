@@ -20,7 +20,7 @@ class InLoginView(LoginView):
         return reverse('persons:person_list')
 
 
-class OutLogoutView(LoginView):
+class OutLogoutView(LogoutView):
     next_page = reverse_lazy('persons:login')
 
 
